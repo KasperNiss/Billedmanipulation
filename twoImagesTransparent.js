@@ -1,6 +1,5 @@
-let img;
 let img2;
-let input;
+let img;
 
 function preload() {
   img2 = loadImage("PF.jpg");
@@ -15,7 +14,6 @@ function setup() {
   button = createButton('Save Image');
   button.position(200,19);
   button.mousePressed(SAVE);
-  image(img2, 0,0,188,242);
   slider = createSlider(0, 1, 0.5, 0);
 slider.position(200, 40);
 slider.style('width', '100px');
@@ -35,7 +33,8 @@ function draw(){
  function handleFile(file) {
    if (file.type ==='image') {
      img = loadImage(file.data,'');
-     img.hide();
+     print(img);
+    // img.hide();
    } else {
      img = null;
    }
