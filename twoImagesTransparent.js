@@ -1,12 +1,6 @@
-let img;
-let img2;
-let img3;
-let img4;
-let img5;
-let v = 0;
-let slider;
-let button;
+let img, img2, img3, img4, img5, v=0, slider, button, canvas, filnavn;
 
+//Loader de 4 billeder man kan vælge skifte imellem
 function preload() {
   img2 = loadImage("PF.jpg");
   img3 = loadImage("DB.jpg");
@@ -14,6 +8,7 @@ function preload() {
   img5 = loadImage("RYS.jpg");
 }
 
+//ændrer værdien v når man klikker
 function CHANGE (){
   v += 1;
     if (v > 3) {
@@ -21,21 +16,28 @@ function CHANGE (){
     }
 }
 
+//gør startsiden klar med knapper, slider osv.
 function setup() {
-  createCanvas(188,242);
+  canvas = createCanvas(188,242);
   input = createFileInput(handleFile);
   input.position(200,5);
+
   button = createButton('Save Image');
   button.position(200,30);
   button.mousePressed(SAVE);
   buttonc = createButton('Change Image');
-  buttonc.position(200,80);
+  buttonc.position(200,105);
   buttonc.mousePressed(CHANGE);
+
   slider = createSlider(0, 1, 0.5, 0);
-  slider.position(200, 55);
+  slider.position(200, 80);
   slider.style('width', '100px');
+
+  filnavn = createInput();
+  filnavn.position(200, 155);
 }
 
+//Ændrer det billede man lægger ovenpå sit eget billede
 function CALL(n) {
   if(n==0) {
     image(img2, 0, 0, 188, 242);
@@ -51,16 +53,16 @@ function CALL(n) {
   }
 }
 
+//Her tegnet den billedet
 function draw(){
   CALL(v);
   if(img){
     image(img, 0, 0, 188, 242);
     tint(255, 255 * slider.value());
   }
-
-
 }
 
+//Her oploader man billedet
  function handleFile(file) {
    if (file.type ==='image') {
      img = loadImage(file.data,'');
@@ -70,6 +72,11 @@ function draw(){
    }
  }
 
+//Her gemmer man billedet
   function SAVE () {
-    saveCanvas ('sjovtbilledexD','jpg');
+    let navn = filnavn.value();
+    if (navn ===  null || navn === undefined || navn.length == 0) {
+      navn = 'sjovtbillede';
+    }
+    saveCanvas (canvas, navn, 'jpg');
   }
