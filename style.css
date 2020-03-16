@@ -1,0 +1,16 @@
+html, body {
+  margin: 5;
+  padding: 5;
+  }
+
+#fil {
+  position: absolute;
+  left: 200px;
+  top: 120px;
+}
+
+#slider {
+  position: absolute;
+  left: 200px;
+  top: 45px;
+}
