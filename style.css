@@ -6,11 +6,11 @@ html, body {
 #fil {
   position: absolute;
   left: 200px;
-  top: 120px;
+  top: 15px;
 }
 
 #slider {
   position: absolute;
   left: 200px;
-  top: 45px;
+  top: 60px;
 }
