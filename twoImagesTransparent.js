@@ -23,7 +23,7 @@ function setup() {
   input.position(200,5);
 
   button = createButton('Save Image');
-  button.position(200,30);
+  button.position(200,155);
   button.mousePressed(SAVE);
   buttonc = createButton('Change Image');
   buttonc.position(200,105);
@@ -34,7 +34,7 @@ function setup() {
   slider.style('width', '100px');
 
   filnavn = createInput();
-  filnavn.position(200, 155);
+  filnavn.position(200, 30);
 }
 
 //Ændrer det billede man lægger ovenpå sit eget billede
