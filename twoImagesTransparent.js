@@ -23,18 +23,18 @@ function setup() {
   input.position(200,5);
 
   button = createButton('Save Image');
-  button.position(200,155);
+  button.position(200,145);
   button.mousePressed(SAVE);
   buttonc = createButton('Change Image');
-  buttonc.position(200,105);
+  buttonc.position(200,118);
   buttonc.mousePressed(CHANGE);
 
   slider = createSlider(0, 1, 0.5, 0);
-  slider.position(200, 80);
+  slider.position(200, 95);
   slider.style('width', '100px');
 
   filnavn = createInput();
-  filnavn.position(200, 30);
+  filnavn.position(200, 50);
 }
 
 //Ændrer det billede man lægger ovenpå sit eget billede
