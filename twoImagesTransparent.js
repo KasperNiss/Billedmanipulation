@@ -76,7 +76,7 @@ function draw(){
   function SAVE () {
     let navn = filnavn.value();
     if (navn ===  null || navn === undefined || navn.length == 0) {
-      navn = 'sjovtbillede';
+      navn = 'sjovtbilledexD';
     }
     saveCanvas (canvas, navn, 'jpg');
   }
