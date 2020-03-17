@@ -25,7 +25,7 @@ function setup() {
   button = createButton('Save Image');
   button.position(200,145);
   button.mousePressed(SAVE);
-  buttonc = createButton('Change Image');
+  buttonc = createButton('Change Filter');
   buttonc.position(200,118);
   buttonc.mousePressed(CHANGE);
 
